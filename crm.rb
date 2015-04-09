@@ -1,12 +1,12 @@
 require_relative 'rolodex'
 require_relative 'contact'
 require 'sinatra'
+require "pry"
 
 $rolodex= Rolodex.new
 
 get '/' do
-	@crm_app_name = "Iva's CRM"
-  erb :index
+  erb(:index)
 end
 
 
@@ -16,11 +16,11 @@ get "/contacts" do
   @contacts << Contact.new("Mark", "Zuckerberg", "mark@facebook.com", "CEO")
   @contacts << Contact.new("Sergey", "Brin", "sergey@google.com", "Co-Founder")
 
-  erb :contacts
+  erb(:contacts)
 end
 
 get '/contacts/new' do
-	erb :new_contact
+	erb(:new_contact)
 end
 
 post '/contacts' do
