@@ -5,4 +5,11 @@ body {
 
 h1 {
 	color: white;
+	text-align: center;
 }
+
+div {
+	color: #B0B0B0;
+	font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
