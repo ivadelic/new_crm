@@ -1,14 +1,15 @@
 <link rel = "stylesheet" href = "/style.css">
-<h1>All Contacts</h1>
+<h2>All Contacts</h2>
 
 <ul>
 <% $rolodex.contacts.each do |contact| %>
   <li>
-  	<%=contact.first_name %> 
-  	<%=contact.last_name %> 
-  	<%=contact.email %>
-  	<%=contact.note %>
+  	<h3><%=contact.first_name %> <%=contact.last_name %></h3>
+  	<p><strong>Email: </strong><%=contact.email %></p>
+  	<p><strong>Note: </strong><%=contact.note %></p>
   </li>
-  <a href="/contacts/<%= contact.id %>/edit">Edit</a>
+  <a href="/contacts/<%= contact.id %>/edit"</a>
+  <a href="/contacts/<%= contact.id %>/edit">Delete</a>
 <% end %>
 </ul>
+

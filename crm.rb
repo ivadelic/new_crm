@@ -4,7 +4,7 @@ require 'sinatra'
 require 'pry'
 
 $rolodex= Rolodex.new
-$rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com","Rockstar"))
+# $rolodex.add_contact(Contact.new("Johnny", "Bravo", "johnny@bitmakerlabs.com","Rockstar"))
 
 get '/' do
   erb(:index)
@@ -64,15 +64,18 @@ put "/contacts/:id" do
 end
 
 # delete
+
 delete "/contacts/:id" do
-  @contact = @@rolodex.find(params[:id].to_i)
+  @contact = $rolodex.find(params[:id].to_i)
   if @contact
-    @@rolodex.remove_contact(@contact)
+    $rolodex.remove_contact(@contact)
     redirect to("/contacts")
   else
     raise Sinatra::NotFound
   end
 end
+
+
 
 
 
