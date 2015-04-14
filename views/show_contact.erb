@@ -1,12 +1,14 @@
-<link rel = "stylesheet" href = "/style.css">
-<h2><%= @contact.first_name %></h2>
-<h2> <%= @contact.last_name %></h2>
+
+<h3><%= @contact.first_name %></h3>
+<h3> <%= @contact.last_name %></h3>
 <p><strong>Email:</strong> <%= @contact.email %></p>
 <p><strong>Note:</strong> <%= @contact.note %></p>
 <link>
 
+<a href="/contacts/<%= @contact.id%>/edit"><button class="btn btn-default" >Edit</button></a>
+
 
 <form action="/contacts/<%= @contact.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" name="Delete Contact">
+  <input type="submit" class="btn btn-default" name="Delete Contact" value="Delete">
 </form>
